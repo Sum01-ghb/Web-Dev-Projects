@@ -16,7 +16,10 @@ connectCloudinary();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://ecommerce-frontend-wbbe.onrender.com',
+  credentials: true, 
+}));
 
 // API Endpoints
 app.get("/", (req, res) => {
