@@ -16,7 +16,17 @@ connectCloudinary();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+const allowedOrigins = [
+  "https://ecommerce-frontend-wbbe.onrender.com",
+  "https://ecommerce-admin-tyzh.onrender.com",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 
 // API Endpoints
 app.get("/", (req, res) => {
