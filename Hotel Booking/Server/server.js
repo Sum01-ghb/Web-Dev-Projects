@@ -14,7 +14,12 @@ connectDB();
 connectCloudinary();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(express.json());
@@ -25,7 +30,7 @@ app.use("/api/clerk", clerkWebhooks);
 
 app.get("/", (req, res) => res.send("API is working"));
 app.use("/api/user", userRouter);
-app.use("/api/hotel", hotelRouter);
+app.use("/api/hotels", hotelRouter);
 app.use("/api/rooms", roomRouter);
 app.use("/api/bookings", bookingRouter);
 

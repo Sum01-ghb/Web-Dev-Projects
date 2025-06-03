@@ -16,7 +16,7 @@ const checkAvailabilty = async ({ checkInDate, checkOutDate, room }) => {
   }
 };
 
-export const checkAvailabiltyAPI = async (req, res) => {
+export const checkAvailabilityAPI = async (req, res) => {
   try {
     const { room, checkInDate, checkOutDate } = req.body;
     const isAvailable = await checkAvailabilty({
