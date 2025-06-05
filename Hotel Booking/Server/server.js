@@ -9,6 +9,7 @@ import hotelRouter from "./routes/hotelRoutes.js";
 import connectCloudinary from "./configs/cloudinary.js";
 import roomRouter from "./routes/roomRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
+import { stripeWebhooks } from "./controllers/stripeWebHooks.js";
 
 connectDB();
 connectCloudinary();
@@ -19,6 +20,13 @@ app.use(
     origin: "http://localhost:5173",
     credentials: true,
   })
+);
+
+// API to listen stripe webhooks
+app.post(
+  "/api/stripe",
+  express.raw({ type: "application/json" }),
+  stripeWebhooks
 );
 
 // Middleware
