@@ -9,7 +9,7 @@ import hotelRouter from "./routes/hotelRoutes.js";
 import connectCloudinary from "./configs/cloudinary.js";
 import roomRouter from "./routes/roomRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
-import { stripeWebhooks } from "./controllers/stripeWebHooks.js";
+import { stripeWebhooks } from "./controllers/stripeWebhooks.js";
 
 connectDB();
 connectCloudinary();
@@ -17,7 +17,10 @@ connectCloudinary();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://quickstay-backend-i23l.onrender.com",
+    ],
     credentials: true,
   })
 );
