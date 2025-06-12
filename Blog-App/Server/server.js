@@ -11,7 +11,7 @@ connectDB();
 // Middlewares
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://quickblog-server.onrender.com"],
+    origin: ["http://localhost:5173", "https://quick-blog-7ymu.onrender.com"],
     credentials: true,
   })
 );
