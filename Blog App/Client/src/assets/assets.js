@@ -181,7 +181,7 @@ export const blog_data = [
     createdAt: "2025-04-29T09:18:19.662Z",
     updatedAt: "2025-04-29T10:13:25.035Z",
     __v: 0,
-    subTitle: " Why Tourism Matters More Than You Think",
+    subTitle: "sWhy Tourism Matters More Than You Think",
   },
   {
     _id: "6810a6a2ed57ecc68a99abb3",
