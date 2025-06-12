@@ -17,10 +17,7 @@ connectCloudinary();
 const app = express();
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://quickstay-backend-i23l.onrender.com",
-    ],
+    origin: ["http://localhost:5173", "https://quick-stay-muiv.onrender.com"],
     credentials: true,
   })
 );
