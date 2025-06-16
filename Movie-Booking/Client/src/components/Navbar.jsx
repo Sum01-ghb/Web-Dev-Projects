@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-16 lg:px-36 py-5">
+    <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-16 lg:px-36 py-5">
       <Link className="max-md:flex-1" to="/">
         <img src={assets.logo} className="w-36 h-auto" alt="" />
       </Link>
