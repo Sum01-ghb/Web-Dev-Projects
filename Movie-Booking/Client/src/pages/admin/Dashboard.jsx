@@ -6,13 +6,15 @@ import {
   StarIcon,
   UsersIcon,
 } from "lucide-react";
-import { dummyDashboardData } from "../../assets/assets.js";
 import Loading from "../../components/Loading.jsx";
 import Title from "../../components/admin/Title.jsx";
 import BlurCircle from "../../components/BlurCircle.jsx";
 import dateFormat from "../../lib/dateFormat.js";
+import { useAppContext } from "../../context/appContext.jsx";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
+  const { axios, getToken, user, image_base_url } = useAppContext();
   const currency = import.meta.env.VITE_CURRENCY;
   const [dashboardData, setDashboardData] = useState({
     totalBookings: 0,
@@ -46,13 +48,26 @@ const Dashboard = () => {
   ];
 
   const fetchDashboardData = async () => {
-    setDashboardData(dummyDashboardData);
-    setLoading(false);
+    try {
+      const { data } = await axios.get("/api/admin/dashboard", {
+        headers: { Authorization: `Bearer ${await getToken()}` },
+      });
+      if (data.success) {
+        setDashboardData(data.dashboardData);
+        setLoading(false);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error("Error fetching dashboard data: ", error);
+    }
   };
 
   useEffect(() => {
-    fetchDashboardData();
-  }, []);
+    if (user) {
+      fetchDashboardData();
+    }
+  }, [user]);
 
   return !loading ? (
     <>
@@ -84,7 +99,7 @@ const Dashboard = () => {
             className="w-55 rounded-lg overflow-hidden h-full pb-3 bg-primary/10 border border-primary/20 hover:-translate-y-1 transition duration-300 "
           >
             <img
-              src={show.movie.poster_path}
+              src={image_base_url + show.movie.poster_path}
               className="h-60 w-full object-cover"
               alt=""
             />

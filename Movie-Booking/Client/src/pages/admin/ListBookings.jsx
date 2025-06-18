@@ -3,20 +3,31 @@ import { dummyBookingData } from "../../assets/assets.js";
 import Loading from "../../components/Loading.jsx";
 import Title from "../../components/admin/Title.jsx";
 import dateFormat from "../../lib/dateFormat.js";
+import { useAppContext } from "../../context/appContext.jsx";
 
 const ListBookings = () => {
+  const { axios, getToken, user } = useAppContext();
   const currency = import.meta.env.VITE_CURRENCY;
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getAllBookings = async () => {
-    setBookings(dummyBookingData);
+    try {
+      const { data } = await axios.get("/api/admin/all-bookings", {
+        headers: { Authorization: `Bearer ${await getToken()}` },
+      });
+      setBookings(data.bookings);
+    } catch (error) {
+      console.error(error);
+    }
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getAllBookings();
-  }, []);
+    if (user) {
+      getAllBookings();
+    }
+  }, [user]);
 
   return !isLoading ? (
     <>
@@ -25,11 +36,11 @@ const ListBookings = () => {
         <table className="w-full border-collapse rounded-md overflow-hidden text-nowrap">
           <thead>
             <tr className="bg-primary/20 text-left text-white">
-              <th className="p2 font-medium pl-5">User Name</th>
-              <th className="p2 font-medium">Movie Name</th>
-              <th className="p2 font-medium">Show Time</th>
-              <th className="p2 font-medium">Seats</th>
-              <th className="p2 font-medium">Amount</th>
+              <th className="p-2 font-medium pl-5">User Name</th>
+              <th className="p-2 font-medium">Movie Name</th>
+              <th className="p-2 font-medium">Show Time</th>
+              <th className="p-2 font-medium">Seats</th>
+              <th className="p-2 font-medium">Amount</th>
             </tr>
           </thead>
 
