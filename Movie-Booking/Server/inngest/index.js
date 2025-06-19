@@ -106,7 +106,6 @@ const sendBookingConfirmationEmail = inngest.createFunction(
         ).toLocaleTimeString("en-US", {
           timeZone: "Asia/Kolkata",
         })}
-        })}
       </p>
       <p>Enjoy the Show!</p>
       <p>Thanks for booking with us!</br> - Team QuickShow</p>
