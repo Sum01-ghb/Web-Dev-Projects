@@ -3,7 +3,7 @@ import Loading from "../../components/Loading.jsx";
 import Title from "../../components/admin/Title.jsx";
 import { CheckIcon, DeleteIcon, StarIcon } from "lucide-react";
 import kConverter from "../../lib/kConverter.js";
-import { useAppContext } from "../../context/appContext.jsx";
+import { useAppContext } from "../../context/AppContext.jsx";
 import toast from "react-hot-toast";
 
 const AddShows = () => {

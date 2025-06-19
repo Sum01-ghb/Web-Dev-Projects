@@ -3,7 +3,7 @@ import { dummyBookingData } from "../../assets/assets.js";
 import Loading from "../../components/Loading.jsx";
 import Title from "../../components/admin/Title.jsx";
 import dateFormat from "../../lib/dateFormat.js";
-import { useAppContext } from "../../context/appContext.jsx";
+import { useAppContext } from "../../context/AppContext.jsx";
 
 const ListBookings = () => {
   const { axios, getToken, user } = useAppContext();

@@ -10,7 +10,7 @@ import Loading from "../../components/Loading.jsx";
 import Title from "../../components/admin/Title.jsx";
 import BlurCircle from "../../components/BlurCircle.jsx";
 import dateFormat from "../../lib/dateFormat.js";
-import { useAppContext } from "../../context/appContext.jsx";
+import { useAppContext } from "../../context/AppContext.jsx";
 import toast from "react-hot-toast";
 
 const Dashboard = () => {
