@@ -35,10 +35,10 @@ const ListShows = () => {
         <table className="w-full border-collapse rounded-md overflow-hidden text-nowrap">
           <thead>
             <tr className="bg-primary/20 text-left text-white">
-              <th className="p2 font-medium pl-5">Movie Name</th>
-              <th className="p2 font-medium">Show Time</th>
-              <th className="p2 font-medium">Total Bookings</th>
-              <th className="p2 font-medium">Earnings</th>
+              <th className="p-2 font-medium pl-5">Movie Name</th>
+              <th className="p-2 font-medium">Show Time</th>
+              <th className="p-2 font-medium">Total Bookings</th>
+              <th className="p-2 font-medium">Earnings</th>
             </tr>
           </thead>
 
