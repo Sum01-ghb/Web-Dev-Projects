@@ -139,7 +139,7 @@ export async function onboard(req, res) {
     );
 
     if (!updatedUser) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
     try {
