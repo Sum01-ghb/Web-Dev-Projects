@@ -1,6 +1,16 @@
 import React from "react";
 
-const SignupPage = () => {
+import React from 'react';
+
+const SignUpPage = () => {
+  return (
+    <div>
+      SignUp Page Placeholder
+    </div>
+  );
+};
+
+export default SignUpPage;
   return <div>SignupPage</div>;
 };
 
