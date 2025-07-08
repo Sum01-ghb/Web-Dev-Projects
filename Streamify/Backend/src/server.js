@@ -5,9 +5,12 @@ import userRoutes from "./Routes/user.route.js";
 import chatRoutes from "./Routes/chat.route.js";
 import { connectDB } from "./Lib/db.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
