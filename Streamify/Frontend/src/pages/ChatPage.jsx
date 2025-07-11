@@ -77,9 +77,7 @@ const ChatPage = () => {
     }
   };
 
-  if (loading || !chatClient || !channel) {
-    return <ChatLoader />;
-  }
+  if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
     <div className="h-[93vh]">
