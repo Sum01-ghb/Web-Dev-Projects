@@ -19,7 +19,9 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.1",
-    "stream-chat": "^8.60.0"
+    "path-to-regexp": "^8.2.0",
+    "stream-chat": "^8.60.0",
+    "streamify": "file:.."
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
