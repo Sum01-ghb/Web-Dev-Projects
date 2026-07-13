@@ -91,7 +91,7 @@ cd Server
 npm install
 
 # Install client dependencies
-cd ../Client
+cd Client
 npm install
 ```
 
